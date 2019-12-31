@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191231 18:43:59.952" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/home/nikhilesh/Desktop/Project/robot_framework_enhancement/robotframework-PandasLibrary/Examples/pandas_Example.robot" id="s1" name="pandas Example">
+<kw type="setup" name="Set Index" library="PandasLibrary">
+<doc>Method to read the csv file and return the pandas dataframe.</doc>
+<arguments>
+<arg>data.csv</arg>
+<arg>id</arg>
+<arg>csv</arg>
+</arguments>
+<msg timestamp="20191231 18:44:00.113" level="INFO">('$$$$$$$$$$$$$$$$', u'id')</msg>
+<status status="PASS" endtime="20191231 18:44:00.113" starttime="20191231 18:44:00.113"></status>
+</kw>
+<test id="s1-t1" name="Test read all content">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Start Test</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.114" starttime="20191231 18:44:00.114"></status>
+</kw>
+<kw name="Read All Content" library="PandasLibrary">
+<doc>This get_message keyword "read_all_content" which will return the data of all rows and
+columns of the file specified as a argument</doc>
+<assign>
+<var>${return_data}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.136" level="INFO">${return_data} =    first_name last_name                   email  gender      ip_address
+id                                                                     
+1     Douglas    Morris    dmorris0@mozilla.org    Male ...</msg>
+<status status="PASS" endtime="20191231 18:44:00.136" starttime="20191231 18:44:00.114"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Returned value is ${return_data}</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.144" starttime="20191231 18:44:00.136"></status>
+</kw>
+<doc>Test to read all rows and columns from the data</doc>
+<status status="PASS" endtime="20191231 18:44:00.145" critical="yes" starttime="20191231 18:44:00.113"></status>
+</test>
+<test id="s1-t2" name="Test read all rows">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Start Test</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.145" starttime="20191231 18:44:00.145"></status>
+</kw>
+<kw name="Read All Rows" library="PandasLibrary">
+<doc>This get_message keyword "read_all_rows" which will return the data based on
+all the row datas and column names.</doc>
+<arguments>
+<arg>first_name</arg>
+</arguments>
+<assign>
+<var>${return_data}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.149" level="INFO">${return_data} = id
+1       Douglas
+2     Stephanie
+3       Russell
+4         Helen
+5         Jesse
+6        Ashley
+7        Rachel
+8       Phillip
+9         Craig
+10      Patrick
+Name: first_name, dtype: object</msg>
+<status status="PASS" endtime="20191231 18:44:00.149" starttime="20191231 18:44:00.145"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Returned value is ${return_data}</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.149" starttime="20191231 18:44:00.149"></status>
+</kw>
+<doc>Test to read all rows from the data</doc>
+<status status="PASS" endtime="20191231 18:44:00.149" critical="yes" starttime="20191231 18:44:00.145"></status>
+</test>
+<test id="s1-t3" name="Test read all column">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Start Test</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.150" starttime="20191231 18:44:00.150"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.150" level="INFO">${row} = 10</msg>
+<status status="PASS" endtime="20191231 18:44:00.150" starttime="20191231 18:44:00.150"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.151" level="INFO">${row} = 10</msg>
+<status status="PASS" endtime="20191231 18:44:00.151" starttime="20191231 18:44:00.150"></status>
+</kw>
+<kw name="Read All Columns" library="PandasLibrary">
+<doc>This get_message keyword "read_all_columns" which will return the data
+based on row and all the column data.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${return_data}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.159" level="INFO">${return_data} = first_name              Patrick
+last_name                Fisher
+email         pfisher9@1und1.de
+gender                     Male
+ip_address          2.36.191.97
+Name: 10, dtype: object</msg>
+<status status="PASS" endtime="20191231 18:44:00.159" starttime="20191231 18:44:00.151"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Returned value is ${return_data}</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.160" starttime="20191231 18:44:00.159"></status>
+</kw>
+<doc>Test to read all columns from the data</doc>
+<status status="PASS" endtime="20191231 18:44:00.160" critical="yes" starttime="20191231 18:44:00.150"></status>
+</test>
+<test id="s1-t4" name="Test read row and column">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Start Test</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.160" starttime="20191231 18:44:00.160"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.161" level="INFO">${row} = 1</msg>
+<status status="PASS" endtime="20191231 18:44:00.161" starttime="20191231 18:44:00.161"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.161" level="INFO">${row} = 1</msg>
+<status status="PASS" endtime="20191231 18:44:00.161" starttime="20191231 18:44:00.161"></status>
+</kw>
+<kw name="Read Row And Column" library="PandasLibrary">
+<doc>This get_message keyword "read_row_and_column" which will return the
+data of particular rows and particular columns of the file specified as a argument.</doc>
+<arguments>
+<arg>${row}</arg>
+<arg>gender</arg>
+</arguments>
+<assign>
+<var>${return_data}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.164" level="INFO">${return_data} = Male</msg>
+<status status="PASS" endtime="20191231 18:44:00.164" starttime="20191231 18:44:00.161"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Returned value is ${return_data}</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.164" starttime="20191231 18:44:00.164"></status>
+</kw>
+<doc>Test to read particular rows and columns from the data</doc>
+<status status="PASS" endtime="20191231 18:44:00.164" critical="yes" starttime="20191231 18:44:00.160"></status>
+</test>
+<test id="s1-t5" name="Test row and column size">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Start Test</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.165" starttime="20191231 18:44:00.165"></status>
+</kw>
+<kw name="Get Row And Column Size" library="PandasLibrary">
+<doc>This get_message keyword "get_row_and_column_size" which will return the
+number of rows and columns present in the file</doc>
+<assign>
+<var>${row_size}</var>
+<var>${column_size}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.167" level="INFO">${row_size} = 10</msg>
+<msg timestamp="20191231 18:44:00.167" level="INFO">${column_size} = 5</msg>
+<status status="PASS" endtime="20191231 18:44:00.167" starttime="20191231 18:44:00.165"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Row size is ${row_size} and column size is ${column_size}</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.167" starttime="20191231 18:44:00.167"></status>
+</kw>
+<doc>Test to get the size of the data</doc>
+<status status="PASS" endtime="20191231 18:44:00.168" critical="yes" starttime="20191231 18:44:00.164"></status>
+</test>
+<test id="s1-t6" name="Test head data">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Start Test</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.168" starttime="20191231 18:44:00.168"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.168" level="INFO">${row} = 5</msg>
+<status status="PASS" endtime="20191231 18:44:00.168" starttime="20191231 18:44:00.168"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.169" level="INFO">${row} = 5</msg>
+<status status="PASS" endtime="20191231 18:44:00.169" starttime="20191231 18:44:00.169"></status>
+</kw>
+<kw name="Read Head Data" library="PandasLibrary">
+<doc>This get_message keyword "read_head_data" which will return the
+data of particular rows and particular columns of the file specified as a argument.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${head_data}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.179" level="INFO">${head_data} =    first_name last_name                   email  gender      ip_address
+id                                                                     
+1     Douglas    Morris    dmorris0@mozilla.org    Male ...</msg>
+<status status="PASS" endtime="20191231 18:44:00.179" starttime="20191231 18:44:00.169"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Available data is ${head_data}</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.187" starttime="20191231 18:44:00.179"></status>
+</kw>
+<doc>Test to get the head data</doc>
+<status status="PASS" endtime="20191231 18:44:00.188" critical="yes" starttime="20191231 18:44:00.168"></status>
+</test>
+<test id="s1-t7" name="Test tail data">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Start Test</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.191" starttime="20191231 18:44:00.191"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.192" level="INFO">${row} = 5</msg>
+<status status="PASS" endtime="20191231 18:44:00.192" starttime="20191231 18:44:00.191"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.192" level="INFO">${row} = 5</msg>
+<status status="PASS" endtime="20191231 18:44:00.192" starttime="20191231 18:44:00.192"></status>
+</kw>
+<kw name="Read Tail Data" library="PandasLibrary">
+<doc>This get_message keyword "read_head_data" which will return the
+data of particular rows and particular columns of the file specified as a argument.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${tail_data}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.202" level="INFO">${tail_data} =    first_name last_name                   email  gender      ip_address
+id                                                                     
+6      Ashley      Diaz        adiaz5@wikia.com  Female ...</msg>
+<status status="PASS" endtime="20191231 18:44:00.202" starttime="20191231 18:44:00.192"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Available data is ${tail_data}</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.210" starttime="20191231 18:44:00.203"></status>
+</kw>
+<doc>Test to get tail data</doc>
+<status status="PASS" endtime="20191231 18:44:00.210" critical="yes" starttime="20191231 18:44:00.189"></status>
+</test>
+<test id="s1-t8" name="Test row index">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>verification of row index number</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.211" starttime="20191231 18:44:00.211"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>last_name</arg>
+</arguments>
+<assign>
+<var>${column_name}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.211" level="INFO">${column_name} = last_name</msg>
+<status status="PASS" endtime="20191231 18:44:00.211" starttime="20191231 18:44:00.211"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Morris</arg>
+</arguments>
+<assign>
+<var>${column_val}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.211" level="INFO">${column_val} = Morris</msg>
+<status status="PASS" endtime="20191231 18:44:00.211" starttime="20191231 18:44:00.211"></status>
+</kw>
+<kw name="Get Row Index" library="PandasLibrary">
+<arguments>
+<arg>${column_name}</arg>
+<arg>${column_val}</arg>
+</arguments>
+<assign>
+<var>@{data}</var>
+</assign>
+<msg timestamp="20191231 18:44:00.214" level="INFO">@{data} = [ 1 ]</msg>
+<status status="PASS" endtime="20191231 18:44:00.214" starttime="20191231 18:44:00.211"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Available data is @{data}[0]</arg>
+</arguments>
+<status status="PASS" endtime="20191231 18:44:00.214" starttime="20191231 18:44:00.214"></status>
+</kw>
+<doc>Test to get row index number</doc>
+<status status="PASS" endtime="20191231 18:44:00.215" critical="yes" starttime="20191231 18:44:00.210"></status>
+</test>
+<doc>This robot file is for the verification of the Pandas Library</doc>
+<status status="PASS" endtime="20191231 18:44:00.215" starttime="20191231 18:43:59.953"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="8">Critical Tests</stat>
+<stat fail="0" pass="8">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="pandas Example" pass="8">pandas Example</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
