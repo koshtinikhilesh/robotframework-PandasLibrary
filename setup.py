@@ -28,6 +28,7 @@ setup(name         = 'robotframework-pandaslibrary',
       ],
       install_requires = [
           'robotframework >= 2.6.0',
+          'pandas >= 0.24.2',
       ],
       packages    = ['PandasLibrary'],
       )
