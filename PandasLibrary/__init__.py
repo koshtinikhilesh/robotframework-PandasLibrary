@@ -6,15 +6,9 @@ import os
 import datetime
 import pandas as pd
 
-from robot.api import logger
-from version import VERSION
-
-__version__ = VERSION
-
 
 class PandasLibrary(object):
 
-    ROBOT_LIBRARY_VERSION = VERSION
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
 
     def __init__(self):
@@ -32,7 +26,6 @@ class PandasLibrary(object):
         self.filename = file_name
         self.file_type = file_type
         self.index_name = index_name
-        print("$$$$$$$$$$$$$$$$", self.index_name)
 
     def read_all_rows(self, column):
         '''
