@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation   This robot file is for the verification of the Pandas Library
-Library    ${CURDIR}${/}..${/}PandasLibrary.py
+Library    PandasLibrary.py
 Suite Setup    Set Index   data.csv  id   csv
 
 
